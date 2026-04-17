@@ -1,0 +1,114 @@
+:root {
+  --bg: #02060d;
+  --surface: #070d17;
+  --surface-2: #0d1524;
+  --text: #f5f7fb;
+  --muted: #9aa8bd;
+  --primary: #f5f7fb;
+  --primary-text: #050b15;
+  --border: #1a2436;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+main {
+  width: min(820px, 94%);
+  margin: 24px auto 0;
+}
+
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 34px 28px 30px;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2rem, 4.5vw, 3.4rem);
+  letter-spacing: -0.03em;
+}
+
+.brand {
+  margin: 0 0 18px;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.subtitle {
+  margin-top: 10px;
+  margin-bottom: 28px;
+  font-size: 1.05rem;
+  color: var(--text);
+}
+
+.form-layout p {
+  margin-bottom: 18px;
+  color: var(--muted);
+}
+
+.form-layout label {
+  display: inline-block;
+  margin-bottom: 5px;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.form-layout input,
+.form-layout textarea {
+  width: 100%;
+  margin-top: 6px;
+  padding: 12px 13px;
+  border-radius: 0;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+.form-layout textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 0;
+  padding: 12px 18px;
+  border: 1px solid var(--primary);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: var(--primary-text);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text);
+}
+
+@media (max-width: 700px) {
+  .panel {
+    padding: 24px 16px;
+  }
+}

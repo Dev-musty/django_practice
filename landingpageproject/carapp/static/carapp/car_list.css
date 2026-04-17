@@ -1,0 +1,124 @@
+:root {
+  --bg: #02060d;
+  --surface: #070d17;
+  --surface-2: #0d1524;
+  --text: #f5f7fb;
+  --muted: #9aa8bd;
+  --primary: #f5f7fb;
+  --primary-text: #050b15;
+  --border: #1a2436;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+main {
+  width: min(1180px, 94%);
+  margin: 24px auto;
+}
+
+.header-panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 28px 26px;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.2rem, 4vw, 3.8rem);
+  letter-spacing: -0.03em;
+}
+
+h2 {
+  margin: 4px 0 10px;
+  font-size: 1.65rem;
+  color: var(--text);
+}
+
+.brand {
+  margin: 0 0 16px;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+p {
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 0;
+  padding: 12px 18px;
+  border: 1px solid var(--primary);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: var(--primary-text);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text);
+}
+
+.car-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.car-card {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  padding: 14px;
+}
+
+.car-image {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  margin-bottom: 12px;
+}
+
+.index {
+  margin: 0;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.about {
+  margin-bottom: 0;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+@media (max-width: 700px) {
+  .header-panel {
+    padding: 20px 14px;
+  }
+}

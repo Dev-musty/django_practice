@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Car</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'carapp/add_car.css' %}">
+</head>
+<body>
+  <main>
+    <section class="panel">
+      <p class="brand">Carr.</p>
+      <h1>Add a New Car</h1>
+      <p class="subtitle">Fill in the fields below to publish a new vehicle to your catalog.</p>
+
+      <form method="post" class="form-layout">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-primary" type="submit">Save Car</button>
+      </form>
+
+      <div class="actions">
+        <a class="btn btn-secondary" href="{% url 'car-list' %}">View Uploaded Cars</a>
+        <a class="btn btn-secondary" href="{% url 'landing-page' %}">Back to Home</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

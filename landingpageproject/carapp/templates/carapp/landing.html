@@ -5,62 +5,50 @@
   {% load static %}
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carr | Precision Engineered</title>
-  <link rel="stylesheet" href="{% static 'carapp/style.css' %}">
+  <title>Carr</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'carapp/landing.css' %}">
 </head>
 
 <body>
-
-  <nav class="navbar">
-    <div class="logo">Carr.</div>
-    <ul class="nav-links">
-      <li><a href="#models">Models</a></li>
-      <li><a href="#engineering">Engineering</a></li>
-      <li><a href="#software">Architecture</a></li>
-    </ul>
-    <a href="#reserve" class="btn-outline">Reserve</a>
-  </nav>
-
-  <header class="hero">
-    <div class="hero-content">
-      <h1>Form meets function.</h1>
-      <p>Bridging advanced thermodynamics with cutting-edge system architecture. Experience the new standard in modern
-        mobility.</p>
-      <div class="hero-actions">
-        <a href="#explore" class="btn-primary">Explore the Series</a>
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <p class="brand">Carr.</p>
+        <h1>Form meets function.</h1>
+        <p class="lead">
+          Build your car catalog by submitting vehicle details and publishing them instantly to your uploaded cars page.
+        </p>
+        <div class="actions">
+          <a class="btn btn-primary" href="{% url 'add-car' %}">Go to Form Page</a>
+          <a class="btn btn-secondary" href="{% url 'car-list' %}">View All Uploaded Cars</a>
+        </div>
       </div>
-    </div>
-  </header>
+    </section>
 
-  <section class="features">
-    <div class="feature-item">
-      <span>01</span>
-      <h3>Aerodynamic Purity</h3>
-      <p>Sculpted to minimize drag and optimize heat transfer, resulting in unparalleled efficiency and a striking,
-        minimalist silhouette.</p>
-    </div>
-    <div class="feature-item">
-      <span>02</span>
-      <h3>Modular Architecture</h3>
-      <p>Built on a highly scalable framework. Our drive systems are designed for seamless integration and robust
-        performance under peak loads.</p>
-    </div>
-    <div class="feature-item">
-      <span>03</span>
-      <h3>Intelligent Core</h3>
-      <p>Powered by a custom backend infrastructure that processes real-time telemetry, ensuring predictive maintenance
-        and flawless execution.</p>
-    </div>
-  </section>
+    <section class="features">
+      <article class="feature-card">
+        <span>01</span>
+        <h2>Input</h2>
+        <p>Collect car name, image URL, maker, model, and description through a simple form.</p>
+      </article>
+      <article class="feature-card">
+        <span>02</span>
+        <h2>Store</h2>
+        <p>Persist every submission in your Django backend so your catalog stays available.</p>
+      </article>
+      <article class="feature-card">
+        <span>03</span>
+        <h2>Display</h2>
+        <p>Render all uploaded cars on one page for fast browsing and review.</p>
+      </article>
+    </section>
+  </main>
 
   <footer class="footer">
-    <div class="footer-content">
-      <h2>Carr.</h2>
-      <p>&copy; 2026 Carr Automotive. All rights reserved.</p>
-    </div>
+    <p>&copy; 2026 Carr Portal</p>
   </footer>
 
 </body>

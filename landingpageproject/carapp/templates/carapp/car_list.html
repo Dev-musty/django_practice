@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Uploaded Cars</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'carapp/car_list.css' %}">
+</head>
+<body>
+  <main>
+    <section class="header-panel">
+      <p class="brand">Carr.</p>
+      <h1>Uploaded Cars</h1>
+      <div class="actions">
+        <a class="btn btn-primary" href="{% url 'add-car' %}">Add Another Car</a>
+        <a class="btn btn-secondary" href="{% url 'landing-page' %}">Back to Home</a>
+      </div>
+    </section>
+
+    {% if cars %}
+      <section class="car-grid">
+        {% for car in cars %}
+          <article class="car-card">
+            <img src="{{ car.car_img }}" alt="{{ car.car_name }}" class="car-image">
+            <p class="index">{{ forloop.counter|stringformat:"02d" }}</p>
+            <h2>{{ car.car_name }}</h2>
+            <p><strong>Maker:</strong> {{ car.maker }}</p>
+            <p><strong>Model:</strong> {{ car.model }}</p>
+            <p class="about">{{ car.about_car }}</p>
+          </article>
+        {% endfor %}
+      </section>
+    {% else %}
+      <section class="header-panel">
+        <p class="muted">No cars uploaded yet.</p>
+      </section>
+    {% endif %}
+  </main>
+</body>
+</html>
