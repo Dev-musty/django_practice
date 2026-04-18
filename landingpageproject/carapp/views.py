@@ -1,4 +1,5 @@
-from django.shortcuts import redirect, render
+from django.shortcuts import get_object_or_404, redirect, render
+from django.views.decorators.http import require_POST
 
 from .forms import CarForm
 from .models import Car
@@ -22,3 +23,10 @@ def add_car(request):
 def car_list(request):
 	cars = Car.objects.all().order_by('-id')
 	return render(request, 'carapp/car_list.html', {'cars': cars})
+
+
+@require_POST
+def delete_car(request, car_id):
+	car = get_object_or_404(Car, id=car_id)
+	car.delete()
+	return redirect('car-list')

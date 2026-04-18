@@ -31,6 +31,10 @@
             <p><strong>Maker:</strong> {{ car.maker }}</p>
             <p><strong>Model:</strong> {{ car.model }}</p>
             <p class="about">{{ car.about_car }}</p>
+            <form method="post" action="{% url 'delete-car' car.id %}" class="delete-form" onsubmit="return confirm('Delete this car?');">
+              {% csrf_token %}
+              <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
           </article>
         {% endfor %}
       </section>

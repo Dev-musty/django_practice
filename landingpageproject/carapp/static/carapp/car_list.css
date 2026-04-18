@@ -113,6 +113,22 @@ p {
   margin-bottom: 0;
 }
 
+.delete-form {
+  margin-top: 14px;
+}
+
+.btn-danger {
+  background: transparent;
+  color: #ffb4b4;
+  border-color: #ff6b6b;
+  cursor: pointer;
+}
+
+.btn-danger:hover {
+  background: #ff6b6b;
+  color: #190303;
+}
+
 .muted {
   color: var(--muted);
 }
